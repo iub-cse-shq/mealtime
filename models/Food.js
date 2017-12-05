@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var ArticleSchema = {
+var FoodSchema = {
 
   title: {
     type: String,
@@ -8,13 +8,26 @@ var ArticleSchema = {
     trim: true,
     required: 'Title required'
   },
-
+ image: {
+    type: String,
+    default: '',
+    trim: true,
+    required: 'image required'
+  },
   content: {
     type: String,
     default: '',
     trim: true,
     required: 'Content required'
+    
 
+  },
+
+  price: {
+    type: Number,
+    default: '',
+    trim: true,
+    required: 'Price Required'
   },
 
   user: {
@@ -26,7 +39,7 @@ var ArticleSchema = {
     type: Date,
     default: Date.now
   }
-};
+}
 
-var Article = mongoose.model('Article', ArticleSchema, 'articles');
-module.exports = Article;
+var Food = mongoose.model('Food', FoodSchema, 'foods');
+module.exports = Food;

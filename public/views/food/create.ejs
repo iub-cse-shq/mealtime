@@ -1,0 +1,89 @@
+<!DOCTYPE html5>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>New Product</title>
+    <!-- General META -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <h2>Create New Product</h2>
+    <div class="form-horizontal">
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" placeholder="John Doe">
+    </div>
+  </div>
+   <div class="form-group">
+    <label for="image" class="col-sm-2 control-label">Image</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="image" placeholder="John Doe">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="Content" class="col-sm-2 control-label">Content</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" rows="3" id="content"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="price" class="col-sm-2 control-label">Price</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="price">
+    </div>
+  </div>
+  
+  
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button id="submit" type="submit" class="btn btn-default">Submit</button>
+      <div id="error"></div>
+    </div>
+  </div>
+</div>
+  </body>
+  <script src="/lib/jquery/dist/jquery.min.js"></script>
+  <script src="/vendor/ejs_foodion.js"></script>
+  <script>
+  var food = {
+    title: "",
+    image:"",
+    content: null,
+    price: null
+  };
+  $('#name').change(function(){
+    food.title = $('#name').val();
+  });
+  $('#image').change(function(){
+    food.image = $('#image').val();
+  });
+  $('#content').change(function(){
+    food.content = $('#content').val();
+  });
+  $('#price').change(function(){
+    food.price = $('#price').val();
+  });
+  $('#submit').click(function(){
+    $.ajax({
+      method:"POST",
+      url:'/api/foods',
+      data: food
+    }).done(function(response){
+      console.log(response);
+      window.location.replace("/foods/"+response._id);
+    }).fail(function(response){
+      $("#error").text(JSON.parse(response.responseText).message);
+        console.log(JSON.parse(response.responseText).message);
+    });
+
+  });
+  </script>
+</html>
