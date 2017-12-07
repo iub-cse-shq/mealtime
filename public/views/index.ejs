@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="css/owl-carousel/owl.carousel.css" />
 	<link rel="stylesheet" href="css/owl-carousel/owl.theme.css" />
 	<link rel="stylesheet" href="css/owl-carousel/owl.transitions.css">
-
+     
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/responsive.css" />
 </head>
@@ -48,7 +48,6 @@
 							<li><a href="#special">MENU</a></li>
 							<li><a href="#abouts">ABOUT US</a></li>
 							<li><a href="#footer">FAQ</a></li>
-
 						  </ul>
 						</div><!-- /.navbar-collapse -->
 					  </div><!-- /.container-fluid -->
@@ -95,27 +94,27 @@
 				<div class="features_content text-center">
 					<div class="col-md-4">
 						<div class="sinle_features wow slideInUp" data-wow-duration="1s">
-							<img src="images/f1.jpg" alt="" />
-							<h5>Best CHEF FOR YOUR EVENT</h5>
-							<p>We promise the best quality food as we have the best man for the job </p>
+							<img src="images/f1.png" alt="" />
 						</div>
 					</div>
+					
 					<div class="col-md-4">
 						<div class="sinle_features wow slideInUp" data-wow-duration="1.5s">
-							<img src="images/f2.png"" alt="" />
-
+							<img src="images/f2.png" alt="" />
+							<h5>Best CHEF FOR YOUR EVENT</h5>
+							<p>We promise the best quality food as we have the best man for the job </p>
 							<h5>TRY THE BEST OF THE BEST CUISINE</h5>
 							<p>Try our sumptuous and mouth watering traditional food. </p>
+							<h5>We are Ready </h5>
+							<p>Food is ready to pickup or delivered to your home! </p>
+						</div>
 						</div>
 						
-					</div>
 					 <div class="col-md-4">
 						<div class="sinle_features wow slideInUp" data-wow-duration="1.5s">
-							<img src="images/f2.png"" alt="" />
-
-							<h5>TRY THE BEST OF THE BEST CUISINE</h5>
-							<p>Try our sumptuous and mouth watering traditional food. </p>
+							<img src="images/f3.png" alt="" />
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -129,16 +128,20 @@
 					<h2>MENU</h2>
 					<div class="separetor"></div>
 				</div>
+				
+				
 				<div class="main_special text-center wow slideInUp" data-wow-duration="3s">
-
-					 <% for(var i=0; i<foods.length; i++) { %>
-      <div><a href="/foods/<%=foods[i]._id%>"><%= foods[i].title %></a>
-      </div>
-      <%}%>
+					<div class="col-md-2 col-sm-3 col-xs-6 single_special">
+							<% for(var i=0; i<foods.length; i++) { %>
+								<a href="/foods/<%=foods[i]._id%>"> <%= foods[i].title %><img src=<%=foods[i].image%>></a>
+                		
+                			<%}%>
+                			
 	</div>
 	</div>
 	</div>
 	</section>
+	
 	<section id="abouts" class="abouts sections">
 		<div class="container">
 			<div class="row">
@@ -155,7 +158,9 @@
 
 							<p>At Mealtime, we don’t just make Food.We make people happy. Mealtime was built on the belief that Food night should be special, <br>and we carry that belief into everything we do. With more than 1 years of experience under our belts, we understand how to best serve our customers through tried and true service principles: We create food we’re proud to serve and deliver it fast, with a smile.</p>
 							<div class="signature_img text-right">
-								<img src="images/signature.png" alt="" />
+								<img src="images/signature.png"alt="" />
+								
+								
 							</div>
 
 							</div>
@@ -165,7 +170,7 @@
 
 					<div class="col-md-6 col-sm-6 col-xs-12">
 						<div class="single_abouts wow slideInRight" data-wow-duration="2s">
-							<img src="images/abimg.png" alt="" />
+							<img src="images/abimg.png"height="600px" alt="" />
 						</div>
 					</div>
 				</div>
@@ -242,7 +247,7 @@
 								<div class="copyright_text_area">
 									<div class="col-md-6 col-sm-6 col-xs-12">
 										<div class="single_footer text-right wow zoomIn" data-wow-duration="2s">
-											<p>Made with <i class="fa fa-heart"></i> by <a href="#">Mealtime</a>2017.All Rights Reserved</p>
+											<p>Made with </i>by<a href="#">MEALTIME</a>2017.All Rights Reserved</p>
 										</div>
 									</div>
 									<div class="col-md-6 col-sm-6 col-xs-12">

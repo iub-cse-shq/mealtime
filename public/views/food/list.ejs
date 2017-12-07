@@ -14,10 +14,16 @@
   <body>
     <div class="container">
       <h2>All Products</h2>
+       
     <% for(var i=0; i<foods.length; i++) { %>
+  
       <div><a href="/foods/<%=foods[i]._id%>"><%= foods[i].title %></a></div>
+      
+      <h1> <a href="/foods/edit/<%=foods[i]._id %>"> edit </a> </h1>
       <%}%>
+    
     </div>
+  
   </body>
   <script src="/lib/jquery/dist/jquery.min.js"></script>
   <script src="/vendor/ejs_foodion.js"></script>

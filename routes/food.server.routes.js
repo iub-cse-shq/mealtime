@@ -9,11 +9,12 @@ module.exports = function(app){
  app.route('/foods/all')
     .get(foods.all);
     
- app.route('/foods/:foodId')
-    .get(foods.view);
     
  app.route('/foods/edit/:foodId')
     .get(foods.edit);
+    
+ app.route('/foods/:foodId')
+    .get(foods.view);
  
  app.route('/api/foods')
 	.get(foods.list)
